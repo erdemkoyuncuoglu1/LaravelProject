@@ -19,7 +19,11 @@
 
     <p>Stock: {{ $product->stock }}</p>
 <form action="/products/{{ $product->id }}" method="POST">
+	<a href="/products/{{ $product->id }}/edit">
+    Edit Product
+</a>
 
+<br><br>
     @csrf
     @method('DELETE')
 
