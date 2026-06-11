@@ -18,6 +18,14 @@
     <p>Price: {{ $product->price }} TL</p>
 
     <p>Stock: {{ $product->stock }}</p>
+<form action="/products/{{ $product->id }}" method="POST">
+
+    @csrf
+    @method('DELETE')
+
+    <button type="submit">Delete Product</button>
+
+</form>
 
 </div>
 
