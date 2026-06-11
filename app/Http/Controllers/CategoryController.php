@@ -20,17 +20,21 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+         return view('categories.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   public function store(Request $request)
+{
+    Category::create([
+        'name' => $request->name,
+        'description' => $request->description,
+    ]);
 
+    return redirect('/categories/create');
+}
     /**
      * Display the specified resource.
      */
