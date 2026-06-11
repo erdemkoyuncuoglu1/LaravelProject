@@ -18,6 +18,7 @@
     <p>Price: {{ $product->price }} TL</p>
 
     <p>Stock: {{ $product->stock }}</p>
+    <p>Category: {{ $product->category->name ?? 'No Category' }}</p>
 <form action="/products/{{ $product->id }}" method="POST">
 	<a href="/products/{{ $product->id }}/edit">
     Edit Product

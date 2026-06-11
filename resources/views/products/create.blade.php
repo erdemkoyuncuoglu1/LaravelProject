@@ -8,7 +8,17 @@
 <h1>Create Product</h1>
 
 <form action="/products" method="POST">
+
     @csrf
+
+    <label>Category:</label><br>
+    <select name="category_id">
+        @foreach($categories as $category)
+            <option value="{{ $category->id }}">
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select><br><br>
 
     <label>Product Name:</label><br>
     <input type="text" name="name"><br><br>
@@ -23,6 +33,7 @@
     <input type="number" name="stock"><br><br>
 
     <button type="submit">Save Product</button>
+
 </form>
 
 </body>
