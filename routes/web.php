@@ -20,3 +20,9 @@ Route::put('/products/{product}', [ProductController::class, 'update']);
 Route::get('/categories/create', [CategoryController::class, 'create']);
 Route::post('/categories', [CategoryController::class, 'store']);
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/admin', function () {
+    $productCount = \App\Models\Product::count();
+    $categoryCount = \App\Models\Category::count();
+
+    return view('admin.dashboard', compact('productCount', 'categoryCount'));
+});
