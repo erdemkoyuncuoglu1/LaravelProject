@@ -56,7 +56,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        $categories = Category::all();
+
+    return view('products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -69,6 +71,7 @@ class ProductController extends Controller
         'description' => $request->description,
         'price' => $request->price,
         'stock' => $request->stock,
+        'category_id' => $request->category_id,
     ]);
 
     return redirect('/products');

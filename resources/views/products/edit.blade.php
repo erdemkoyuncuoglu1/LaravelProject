@@ -12,6 +12,16 @@
     @csrf
     @method('PUT')
 
+    <label>Category:</label><br>
+    <select name="category_id">
+        @foreach($categories as $category)
+            <option value="{{ $category->id }}" 
+                {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select><br><br>
+
     <label>Product Name:</label><br>
     <input type="text" name="name" value="{{ $product->name }}"><br><br>
 
