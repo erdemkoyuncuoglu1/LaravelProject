@@ -33,15 +33,24 @@ Route::post('/cart/add/{product}', function (\App\Models\Product $product) {
 
     $cart = session()->get('cart', []);
 
-    $cart[$product->id] = [
-        'name' => $product->name,
-        'price' => $product->price,
-    ];
+    if (isset($cart[$product->id])) {
+
+        $cart[$product->id]['quantity']++;
+
+    } else {
+
+        $cart[$product->id] = [
+            'name' => $product->name,
+            'price' => $product->price,
+            'quantity' => 1,
+        ];
+    }
 
     session()->put('cart', $cart);
 
     return redirect('/products');
 });
+
 Route::post('/cart/remove/{id}', function ($id) {
 
     $cart = session()->get('cart', []);
@@ -49,6 +58,11 @@ Route::post('/cart/remove/{id}', function ($id) {
     unset($cart[$id]);
 
     session()->put('cart', $cart);
+
+    return redirect('/cart');
+});
+Route::get('/cart/clear', function () {
+    session()->forget('cart');
 
     return redirect('/cart');
 });

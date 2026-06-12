@@ -16,7 +16,7 @@
     @foreach(session('cart') as $item)
 
         @php
-            $total += $item['price'];
+           $total += $item['price'] * $item['quantity'];
         @endphp
 
         <div style="border:1px solid black; padding:10px; margin:10px;">
@@ -24,7 +24,8 @@
             <h3>{{ $item['name'] }}</h3>
 
             <p>Price: {{ $item['price'] }} TL</p>
-	    <form action="/cart/remove/{{ array_search($item, session('cart')) }}" method="POST">
+<p>Quantity: {{ $item['quantity'] }}</p>
+<p>Subtotal: {{ $item['price'] * $item['quantity'] }} TL</p>
 
     @csrf
 
