@@ -7,21 +7,26 @@
 @foreach($products as $product)
 
 <div style="
-    border:1px solid #ccc;
+    border:2px solid #D4AF37;
     padding:20px;
     margin:15px;
-    border-radius:10px;
-    width:300px;
+    border-radius:15px;
+    width:320px;
+    background:white;
 ">
 
-    <h2>{{ $product->name }}</h2>
+    <h2 style="color:#0B6E4F;">
+    {{ $product->name }}
+</h2>
 
     <p>{{ $product->description }}</p>
 
-    <p>
-    <strong>
-        Price: {{ $product->price }} TL
-    </strong>
+    <p style="
+    color:#D4AF37;
+    font-size:20px;
+    font-weight:bold;
+">
+    {{ $product->price }} TL
 </p>
     <p>Stock: {{ $product->stock }}</p>
 
@@ -29,7 +34,13 @@
 
     <form action="/cart/add/{{ $product->id }}" method="POST">
         @csrf
-        <button type="submit">
+    <button type="submit" style="
+    background:#0B6E4F;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+">
     🛒 Add To Cart
 </button>
     </form>
