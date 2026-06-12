@@ -40,32 +40,42 @@
 <h2>Featured Products</h2>
 
 <div style="
-    border:1px solid #ccc;
-    padding:15px;
-    margin-top:10px;
-    border-radius:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
 ">
 
-    <h3>🇦🇷 Argentina Home Jersey</h3>
+    <div style="
+        border:1px solid #ccc;
+        padding:15px;
+        margin-top:10px;
+        border-radius:10px;
+    ">
 
-    <p>Official World Cup Jersey</p>
+        <h3>🇦🇷 Argentina Home Jersey</h3>
 
-    <strong>2499 TL</strong>
+        <p>Official World Cup Jersey</p>
+
+        <strong>2499 TL</strong>
+
+    </div>
+
+    <div style="
+        border:1px solid #ccc;
+        padding:15px;
+        margin-top:10px;
+        border-radius:10px;
+    ">
+
+        <h3>🇧🇷 Brazil Home Jersey</h3>
+
+        <p>Official World Cup Jersey</p>
+
+        <strong>2299 TL</strong>
+
+    </div>
 
 </div>
 
-<div style="
-    border:1px solid #ccc;
-    padding:15px;
-    margin-top:10px;
-    border-radius:10px;
-">
 
-    <h3>🇧🇷 Brazil Home Jersey</h3>
-
-    <p>Official World Cup Jersey</p>
-
-    <strong>2299 TL</strong>
-
-</div>
 @endsection

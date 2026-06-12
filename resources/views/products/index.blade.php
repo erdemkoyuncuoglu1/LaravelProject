@@ -3,7 +3,10 @@
 @section('content')
 
 <h1>Football Store Products</h1>
-
+<div style="
+    display:flex;
+    flex-wrap:wrap;
+">
 @foreach($products as $product)
 
 <div style="
@@ -65,3 +68,4 @@
 @endforeach
 
 @endsection
+</div>
