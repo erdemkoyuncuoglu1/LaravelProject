@@ -2,26 +2,70 @@
 
 @section('content')
 
-<h1>🏆 World Cup Store</h1>
+<div style="
+    text-align:center;
+    padding:50px;
+    background:#F8F8F8;
+    border:2px solid #D4AF37;
+    border-radius:10px;
+">
 
-<p>
-    Official World Cup Jerseys, Footballs and Accessories.
-</p>
+    <h1 style="color:#0B6E4F;">
+        🏆 FIFA World Cup Store
+    </h1>
 
-<hr>
+    <h3>
+        Official Jerseys, Footballs and Accessories
+    </h3>
 
-<h2>Featured Categories</h2>
+    <p>
+        Explore the best World Cup products from your favorite national teams.
+    </p>
 
-<ul>
-    <li>Jerseys</li>
-    <li>Footballs</li>
-    <li>Accessories</li>
-</ul>
+    <br>
 
-<hr>
+    <a href="/products" style="
+        background:#0B6E4F;
+        color:white;
+        padding:10px 20px;
+        text-decoration:none;
+        border-radius:5px;
+    ">
+        Browse Products
+    </a>
 
-<a href="/products">
-    Browse Products
-</a>
+</div>
+<br><br>
 
+<h2>Featured Products</h2>
+
+<div style="
+    border:1px solid #ccc;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+">
+
+    <h3>🇦🇷 Argentina Home Jersey</h3>
+
+    <p>Official World Cup Jersey</p>
+
+    <strong>2499 TL</strong>
+
+</div>
+
+<div style="
+    border:1px solid #ccc;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+">
+
+    <h3>🇧🇷 Brazil Home Jersey</h3>
+
+    <p>Official World Cup Jersey</p>
+
+    <strong>2299 TL</strong>
+
+</div>
 @endsection
