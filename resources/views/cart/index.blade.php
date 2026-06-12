@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Shopping Cart</title>
-</head>
-<body>
-<a href="/products">Products</a> |
-<a href="/admin">Admin Panel</a>
+@extends('layouts.app')
 
-<hr>
+@section('content')
+
 <h1>
     Football Store Shopping Cart
     ({{ count(session('cart', [])) }})
@@ -19,10 +13,10 @@
         $total = 0;
     @endphp
 
-    @foreach(session('cart') as $item)
+    @foreach(session('cart') as $id => $item)
 
         @php
-           $total += $item['price'] * $item['quantity'];
+            $total += $item['price'] * $item['quantity'];
         @endphp
 
         <div style="border:1px solid black; padding:10px; margin:10px;">
@@ -30,16 +24,14 @@
             <h3>{{ $item['name'] }}</h3>
 
             <p>Price: {{ $item['price'] }} TL</p>
-<p>Quantity: {{ $item['quantity'] }}</p>
-<p>Subtotal: {{ $item['price'] * $item['quantity'] }} TL</p>
+            <p>Quantity: {{ $item['quantity'] }}</p>
+            <p>Subtotal: {{ $item['price'] * $item['quantity'] }} TL</p>
 
-    @csrf
+            <form action="/cart/remove/{{ $id }}" method="POST">
+                @csrf
 
-    <button type="submit">
-        Remove From Cart
-    </button>
-
-</form>
+                <button type="submit">Remove From Cart</button>
+            </form>
 
         </div>
 
@@ -53,5 +45,4 @@
 
 @endif
 
-</body>
-</html>
+@endsection

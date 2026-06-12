@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Categories</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 
 <h1>Football Store Categories</h1>
 
@@ -19,5 +16,4 @@
 
 @endforeach
 
-</body>
-</html>
+@endsection

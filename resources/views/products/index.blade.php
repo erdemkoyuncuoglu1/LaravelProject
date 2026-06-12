@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Products</title>
-</head>
-<body>
-<a href="/cart">
-    Shopping Cart ({{ count(session('cart', [])) }})
-</a> |
-<a href="/admin">Admin Panel</a>
-<hr>
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Football Store Products</h1>
 
 @foreach($products as $product)
@@ -22,32 +15,31 @@
     <p>Price: {{ $product->price }} TL</p>
 
     <p>Stock: {{ $product->stock }}</p>
+
     <p>Category: {{ $product->category->name ?? 'No Category' }}</p>
-<form action="/cart/add/{{ $product->id }}" method="POST">
-    @csrf
 
-    <button type="submit">
-        Add To Cart
-    </button>
-</form>
+    <form action="/cart/add/{{ $product->id }}" method="POST">
+        @csrf
+        <button type="submit">Add To Cart</button>
+    </form>
 
-<br>
-<form action="/products/{{ $product->id }}" method="POST">
-	<a href="/products/{{ $product->id }}/edit">
-    Edit Product
-</a>
+    <br>
 
-<br><br>
-    @csrf
-    @method('DELETE')
+    <a href="/products/{{ $product->id }}/edit">
+        Edit Product
+    </a>
 
-    <button type="submit">Delete Product</button>
+    <br><br>
 
-</form>
+    <form action="/products/{{ $product->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit">Delete Product</button>
+    </form>
 
 </div>
 
 @endforeach
 
-</body>
-</html>
+@endsection

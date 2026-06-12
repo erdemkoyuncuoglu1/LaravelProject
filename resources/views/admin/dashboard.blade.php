@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Admin Dashboard</title>
-</head>
-<body>
-<a href="/products">Products</a> |
-<a href="/cart">
-    Shopping Cart ({{ count(session('cart', [])) }})
-</a>
-<hr>
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Football Store Admin Panel</h1>
 
 <hr>
@@ -29,5 +22,4 @@
     <li><a href="/categories/create">Add Category</a></li>
 </ul>
 
-</body>
-</html>
+@endsection
