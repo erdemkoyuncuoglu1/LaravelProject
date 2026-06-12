@@ -74,3 +74,6 @@ Route::post('/cart/clear', function () {
 Route::get('/checkout', function () {
     return view('checkout.index');
 });
+Route::get('/login', function () {
+    return view('auth.login');
+});
