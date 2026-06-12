@@ -42,3 +42,13 @@ Route::post('/cart/add/{product}', function (\App\Models\Product $product) {
 
     return redirect('/products');
 });
+Route::post('/cart/remove/{id}', function ($id) {
+
+    $cart = session()->get('cart', []);
+
+    unset($cart[$id]);
+
+    session()->put('cart', $cart);
+
+    return redirect('/cart');
+});

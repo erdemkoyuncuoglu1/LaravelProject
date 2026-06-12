@@ -24,6 +24,15 @@
             <h3>{{ $item['name'] }}</h3>
 
             <p>Price: {{ $item['price'] }} TL</p>
+	    <form action="/cart/remove/{{ array_search($item, session('cart')) }}" method="POST">
+
+    @csrf
+
+    <button type="submit">
+        Remove From Cart
+    </button>
+
+</form>
 
         </div>
 
