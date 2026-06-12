@@ -44,6 +44,11 @@
     <button type="submit">
         Clear Cart
     </button>
+<br>
+
+<a href="/checkout">
+    Proceed To Checkout
+</a>
 </form>
 @else
 

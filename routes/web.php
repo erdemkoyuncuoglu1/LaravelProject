@@ -71,3 +71,6 @@ Route::post('/cart/clear', function () {
 
     return redirect('/cart');
 });
+Route::get('/checkout', function () {
+    return view('checkout.index');
+});
