@@ -4,7 +4,9 @@
     <title>Products</title>
 </head>
 <body>
-<a href="/cart">Shopping Cart</a> |
+<a href="/cart">
+    Shopping Cart ({{ count(session('cart', [])) }})
+</a> |
 <a href="/admin">Admin Panel</a>
 <hr>
 <h1>Football Store Products</h1>

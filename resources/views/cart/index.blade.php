@@ -8,7 +8,10 @@
 <a href="/admin">Admin Panel</a>
 
 <hr>
-<h1>Football Store Shopping Cart</h1>
+<h1>
+    Football Store Shopping Cart
+    ({{ count(session('cart', [])) }})
+</h1>
 
 @if(session('cart'))
 
