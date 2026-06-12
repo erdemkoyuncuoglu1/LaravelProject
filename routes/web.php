@@ -40,5 +40,5 @@ Route::post('/cart/add/{product}', function (\App\Models\Product $product) {
 
     session()->put('cart', $cart);
 
-    return redirect('/cart');
+    return redirect('/products');
 });

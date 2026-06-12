@@ -9,7 +9,15 @@
 
 @if(session('cart'))
 
+    @php
+        $total = 0;
+    @endphp
+
     @foreach(session('cart') as $item)
+
+        @php
+            $total += $item['price'];
+        @endphp
 
         <div style="border:1px solid black; padding:10px; margin:10px;">
 
@@ -20,6 +28,8 @@
         </div>
 
     @endforeach
+
+    <h2>Total: {{ $total }} TL</h2>
 
 @else
 
