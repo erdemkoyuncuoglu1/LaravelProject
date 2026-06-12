@@ -4,7 +4,10 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
+<a href="/products">Products</a> |
+<a href="/cart">Shopping Cart</a>
 
+<hr>
 <h1>Football Store Admin Panel</h1>
 
 <hr>

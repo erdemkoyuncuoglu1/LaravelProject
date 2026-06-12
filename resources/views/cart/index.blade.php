@@ -4,7 +4,10 @@
     <title>Shopping Cart</title>
 </head>
 <body>
+<a href="/products">Products</a> |
+<a href="/admin">Admin Panel</a>
 
+<hr>
 <h1>Football Store Shopping Cart</h1>
 
 @if(session('cart'))
