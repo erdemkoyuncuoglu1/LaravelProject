@@ -38,7 +38,13 @@
     @endforeach
 
     <h2>Total: {{ $total }} TL</h2>
+<form action="/cart/clear" method="POST">
+    @csrf
 
+    <button type="submit">
+        Clear Cart
+    </button>
+</form>
 @else
 
     <p>Your cart is empty.</p>

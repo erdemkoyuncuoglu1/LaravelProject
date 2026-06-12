@@ -66,3 +66,8 @@ Route::get('/cart/clear', function () {
 
     return redirect('/cart');
 });
+Route::post('/cart/clear', function () {
+    session()->forget('cart');
+
+    return redirect('/cart');
+});
