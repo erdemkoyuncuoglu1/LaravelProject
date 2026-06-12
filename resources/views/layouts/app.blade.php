@@ -12,7 +12,8 @@
     Shopping Cart ({{ count(session('cart', [])) }})
 </a> |
 <a href="/admin">Admin Panel</a> |
-<a href="/login">Login</a>
+<a href="/login">Login</a> |
+<a href="/register">Register</a>
 </nav>
 
 <hr>
