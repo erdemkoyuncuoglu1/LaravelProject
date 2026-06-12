@@ -14,6 +14,10 @@
 <a href="/admin">Admin Panel</a> |
 <a href="/login">Login</a> |
 <a href="/register">Register</a>
+<form action="/logout" method="POST" style="display:inline;">
+    @csrf
+    <button type="submit">Logout</button>
+</form>
 </nav>
 
 <hr>
