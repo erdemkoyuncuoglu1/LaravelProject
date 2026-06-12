@@ -4,7 +4,8 @@
 
 <h1>Register</h1>
 
-<form>
+<form action="/register" method="POST">
+    @csrf
 
     <label>Name:</label><br>
     <input type="text" name="name"><br><br>

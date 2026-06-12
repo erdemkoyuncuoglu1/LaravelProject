@@ -1,9 +1,10 @@
 <?php
-
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -80,3 +81,5 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
+
+Route::post('/register', [AuthController::class, 'register']);
