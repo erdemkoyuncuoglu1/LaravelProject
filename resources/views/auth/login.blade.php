@@ -4,7 +4,8 @@
 
 <h1>Login</h1>
 
-<form>
+<form action="/login" method="POST">
+    @csrf
 
     <label>Email:</label><br>
     <input type="email" name="email"><br><br>
