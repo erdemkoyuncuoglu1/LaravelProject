@@ -6,21 +6,32 @@
 
 @foreach($products as $product)
 
-<div style="border:1px solid black; padding:10px; margin:10px;">
+<div style="
+    border:1px solid #ccc;
+    padding:20px;
+    margin:15px;
+    border-radius:10px;
+    width:300px;
+">
 
-    <h3>{{ $product->name }}</h3>
+    <h2>{{ $product->name }}</h2>
 
     <p>{{ $product->description }}</p>
 
-    <p>Price: {{ $product->price }} TL</p>
-
+    <p>
+    <strong>
+        Price: {{ $product->price }} TL
+    </strong>
+</p>
     <p>Stock: {{ $product->stock }}</p>
 
     <p>Category: {{ $product->category->name ?? 'No Category' }}</p>
 
     <form action="/cart/add/{{ $product->id }}" method="POST">
         @csrf
-        <button type="submit">Add To Cart</button>
+        <button type="submit">
+    🛒 Add To Cart
+</button>
     </form>
 
     <br>
