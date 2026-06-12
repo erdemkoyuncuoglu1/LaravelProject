@@ -19,6 +19,15 @@
 
     <p>Stock: {{ $product->stock }}</p>
     <p>Category: {{ $product->category->name ?? 'No Category' }}</p>
+<form action="/cart/add/{{ $product->id }}" method="POST">
+    @csrf
+
+    <button type="submit">
+        Add To Cart
+    </button>
+</form>
+
+<br>
 <form action="/products/{{ $product->id }}" method="POST">
 	<a href="/products/{{ $product->id }}/edit">
     Edit Product

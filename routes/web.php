@@ -26,3 +26,6 @@ Route::get('/admin', function () {
 
     return view('admin.dashboard', compact('productCount', 'categoryCount'));
 });
+Route::get('/cart', function () {
+    return view('cart.index');
+});
