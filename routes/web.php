@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-
+use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,4 +28,17 @@ Route::get('/admin', function () {
 });
 Route::get('/cart', function () {
     return view('cart.index');
+});
+Route::post('/cart/add/{product}', function (\App\Models\Product $product) {
+
+    $cart = session()->get('cart', []);
+
+    $cart[$product->id] = [
+        'name' => $product->name,
+        'price' => $product->price,
+    ];
+
+    session()->put('cart', $cart);
+
+    return redirect('/cart');
 });
